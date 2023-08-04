@@ -1,22 +1,21 @@
 
-//asynchronous
-const fs  = require("fs");
-fs.writeFile("read.txt", "today is an awesome day\n", (err) =>  //call back function
-{
-    console.log("file is created");
-    console.log(err);
+// challange 2
+const fs = require("fs");
+
+fs.mkdir("shanto", (err)=>{
+    console.log("Folder has been created");
 });
 
-fs.appendFile("read.txt", "Lets do coding with full focus\n", (err) =>  //call back function
-{
-    console.log("file is append\n");
-    console.log(err);
+fs.writeFile("./shanto/bio.txt","My name is Husain Imam Shanto. ", (err)=>{
+    console.log("file has been created");
 });
-// why we need call back function
 
-fs.readFile("read.txt","UTF-8", (err, data) =>  //call back function
-{
-    console.log("file is being read\n");
+fs.appendFile("./shanto/bio.txt","I am a student of TUC", (err)=>{
+    console.log("file has been appended");
+});
+
+fs.readFile("./shanto/bio.txt","UTF-8", (err,data)=>{
+    console.log("file is being read");
     console.log(data);
-    console.log(err);
 });
+
